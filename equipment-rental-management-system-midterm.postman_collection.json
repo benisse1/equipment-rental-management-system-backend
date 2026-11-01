@@ -1,0 +1,27 @@
+{
+	"info": {
+		"name": "equipment-rental-management-system-midterm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{ "name": "A2 Customer Save", "request": { "method": "POST", "url": "http://localhost:8081/api/customers/save" } },
+		{ "name": "B1 Find by Last Name", "request": { "method": "GET", "url": "http://localhost:8081/api/customers/by-last-name?lastName=mugenzi" } },
+		{ "name": "B2 Orders by Status", "request": { "method": "GET", "url": "http://localhost:8081/api/rental-orders/by-status?status=RESERVED" } },
+		{ "name": "B3 Orders Between Dates", "request": { "method": "GET", "url": "http://localhost:8081/api/rental-orders/between?start=2026-10-01&end=2026-10-31" } },
+		{ "name": "C1 Items by Category", "request": { "method": "GET", "url": "http://localhost:8081/api/equipment-items/by-equipment-category?name=power" } },
+		{ "name": "C2 Free Slots", "request": { "method": "GET", "url": "http://localhost:8081/api/storage-slots/free" } },
+		{ "name": "C3 Unused Categories", "request": { "method": "GET", "url": "http://localhost:8081/api/equipment-categories/unused" } },
+		{ "name": "C4 Customers of Item", "request": { "method": "GET", "url": "http://localhost:8081/api/customers/of-equipment-item/fe26f1f0-c70d-4e47-80d9-802919d7a208" } },
+		{ "name": "D1 Safe Saving", "request": { "method": "POST", "url": "http://localhost:8081/api/rental-orders/save" } },
+		{ "name": "D2 Status Flow", "request": { "method": "PATCH", "url": "http://localhost:8081/api/rental-orders/64978523-9fa4-4bc4-8754-61ab167c1d00/status?status=CHECKED_OUT" } },
+		{ "name": "D3 Add Category to Item", "request": { "method": "PUT", "url": "http://localhost:8081/api/equipment-items/fe26f1f0-c70d-4e47-80d9-802919d7a208/equipment-categories/c7b61cc3-5dfe-45c8-8c0e-c0caea32d7a2" } },
+		{ "name": "D4 Move Item to Slot", "request": { "method": "PATCH", "url": "http://localhost:8081/api/equipment-items/fe26f1f0-c70d-4e47-80d9-802919d7a208/storage-slot?slotNumber=4" } },
+		{ "name": "E1 Save Invoice", "request": { "method": "POST", "url": "http://localhost:8081/api/invoice-lines/save?rentalOrderId=64978523-9fa4-4bc4-8754-61ab167c1d00" } },
+		{ "name": "E2 Invoice by Customer", "request": { "method": "GET", "url": "http://localhost:8081/api/invoice-lines/customer/1111111111111111" } },
+		{ "name": "E3 Delete Invoice", "request": { "method": "DELETE", "url": "http://localhost:8081/api/invoice-lines/delete/dd1ded8a-0d54-4acc-beaf-a9890070fb1d" } },
+		{ "name": "F1 Stats By Status", "request": { "method": "GET", "url": "http://localhost:8081/api/rental-orders/stats/by-status" } },
+		{ "name": "F2 Cancel Day", "request": { "method": "PATCH", "url": "http://localhost:8081/api/rental-orders/cancel-day?equipmentItemId=fe26f1f0-c70d-4e47-80d9-802919d7a208&date=2026-11-10" } },
+		{ "name": "Bonus Dashboard", "request": { "method": "GET", "url": "http://localhost:8081/api/dashboard/summary" } },
+		{ "name": "Bonus Pagination", "request": { "method": "GET", "url": "http://localhost:8081/api/rental-orders/page?page=0&size=5&sort=startDate,desc" } }
+	]
+}
