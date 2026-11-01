@@ -37,7 +37,7 @@ public class DashboardService {
 
         summary.put("customers", customerRepo.count());
         summary.put("equipmentItems", equipmentItemRepo.count());
-        summary.put("freeStorageSlot", (long) slotRepo.findFreeSlots().size());
+        summary.put("freeStorageSlots", (long) slotRepo.findFreeSlots().size());
         summary.put("ordersToday", orderRepo.countByStartDate(LocalDate.now()));
         summary.put("reserved", orderRepo.countByStatus(RentalOrderStatus.RESERVED));
         summary.put("invoiceLines", invoiceRepo.count());
